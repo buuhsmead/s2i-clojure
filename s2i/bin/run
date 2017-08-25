@@ -1,5 +1,4 @@
 #!/bin/bash -e
-set -x
 #
 # S2I run script for the 's2i-clojure' image.
 # The run script executes the server that runs your application.
@@ -7,8 +6,5 @@ set -x
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
-
-### exec asdf -p 8080
-ls -la ${HOME}
 
 exec java -jar ${HOME}/app-standalone.jar

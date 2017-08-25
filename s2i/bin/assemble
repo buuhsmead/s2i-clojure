@@ -1,5 +1,4 @@
 #!/bin/bash -e
-set -x
 #
 # S2I assemble script for the 's2i-clojure' image.
 # The 'assemble' script builds your application source so that it is ready to run.
