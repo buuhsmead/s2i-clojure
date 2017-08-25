@@ -1,4 +1,5 @@
 #!/bin/bash -e
+set -x
 #
 # S2I run script for the 's2i-clojure' image.
 # The run script executes the server that runs your application.
