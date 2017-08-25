@@ -44,7 +44,7 @@ COPY ./s2i/bin/ /usr/local/s2i
 ##USER 1001
 # This is the default jboss user
 #USER 185
-
+RUN chmod 777 ${HOME}
 
 # TODO: Set the default port for applications built using this image
 EXPOSE 8080

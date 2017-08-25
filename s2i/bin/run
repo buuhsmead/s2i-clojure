@@ -9,4 +9,6 @@ set -x
 #
 
 ### exec asdf -p 8080
+ls -la ${HOME}
+
 exec java -jar ${HOME}/app-standalone.jar
