@@ -43,7 +43,7 @@ COPY ./s2i/bin/ /usr/local/s2i
 # This default user is created in the openshift/base-centos7 image
 ##USER 1001
 # This is the default jboss user
-USER jboss
+#USER 185
 
 
 # TODO: Set the default port for applications built using this image
