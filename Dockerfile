@@ -16,7 +16,7 @@ RUN ${HOME}/lein
 
 COPY ./s2i/bin/ /usr/local/s2i
 
-RUN chmod 775 ${HOME}
+# RUN chmod 775 ${HOME}
 
 EXPOSE 8080
 
