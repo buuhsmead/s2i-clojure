@@ -1,5 +1,5 @@
 
-IMAGE_NAME = s2i-clojure
+IMAGE_NAME = quay.io/hdaems/s2i-clojure
 
 .PHONY: build
 build:
