@@ -32,6 +32,6 @@ COPY ./s2i/bin/ /usr/local/s2i
 
 
 
-EXPOSE 3000 8778
+EXPOSE 8080 8778
 
 CMD ["/usr/libexec/s2i/usage"]

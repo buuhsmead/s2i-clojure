@@ -13,6 +13,6 @@
 
 if [ -d ${HOME}/.m2 ]; then
     pushd ${HOME} > /dev/null
-    tar cf - .m2
+    tar cf - ${HOME}/.m2
     popd > /dev/null
 fi
