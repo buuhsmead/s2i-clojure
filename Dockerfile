@@ -7,7 +7,7 @@ ENV BUILDER_VERSION 1.1.0
 
 LABEL io.k8s.description="Platform for building Clojure apps" \
       io.k8s.display-name="Clojure s2i 1.1.0" \
-      io.openshift.expose-services="3000:http,8778:nrepl" \
+      io.openshift.expose-services="8080:http,8778:nrepl" \
       io.openshift.tags="builder,clojure,lein,leiningen"
 
 
