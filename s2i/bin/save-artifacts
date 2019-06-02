@@ -7,4 +7,12 @@
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
-tar cf - $(HOME)/?/repository
+
+# Besides the tar command, all other output to standard out must 
+# be surpressed.  Otherwise, the tar stream will be corrupted.
+
+if [ -d ${HOME}/.m2 ]; then
+    pushd ${HOME} > /dev/null
+    tar cf - .m2
+    popd > /dev/null
+fi

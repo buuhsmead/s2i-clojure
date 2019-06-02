@@ -1,4 +1,7 @@
 #!/bin/bash -e
+
+set -x
+
 #
 # S2I assemble script for the 's2i-clojure' image.
 # The 'assemble' script builds your application source so that it is ready to run.
@@ -26,6 +29,8 @@ echo "---> Building application from source..."
 
 pushd ${HOME}/src > /dev/null
 ${HOME}/lein ring uberjar
-cp ${HOME}/target/*-standalone.jar /deployments/.
-##mv "$(${HOME}/lein ring uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" /deployments/app-standalone.jar
+#cp ${HOME}/src/target/*-standalone.jar /deployments/.
+cp "$(${HOME}/lein ring uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" /deployments/app-standalone.jar
 popd > /dev/null
+
+ls -latrh /home/jboss
