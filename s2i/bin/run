@@ -14,7 +14,6 @@ if [ -f "${DEPLOYMENTS_DIR}/bin/run.sh" ]; then
     exec ${DEPLOYMENTS_DIR}/bin/run.sh $args ${JAVA_ARGS}
 else
     echo "Starting the Java application using /opt/run-java/run-java.sh ..."
-##    exec /opt/run-java/run-java.sh $args ${JAVA_ARGS}
     exec /opt/run-java/run/run-java.sh $args ${JAVA_ARGS}
 
 fi
