@@ -25,5 +25,7 @@ mv /tmp/src ${HOME}/src
 echo "---> Building application from source..."
 
 pushd ${HOME}/src > /dev/null
-mv "$(${HOME}/lein ring uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" /deployments/app-standalone.jar
+${HOME}/lein ring uberjar
+cp ${HOME}/target/*-standalone.jar /deployments/.
+##mv "$(${HOME}/lein ring uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" /deployments/app-standalone.jar
 popd > /dev/null
