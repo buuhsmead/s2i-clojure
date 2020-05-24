@@ -1,13 +1,14 @@
 # s2i-clojure
-FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
+
+FROM registry.redhat.io/openjdk/openjdk-11-rhel8:latest
 
 MAINTAINER Huub Daems <buuhsmead@gmail.com>
 
-ENV BUILDER_VERSION 1.1.0
+ENV BUILDER_VERSION 1.2.0
 
 LABEL io.k8s.description="Platform for building Clojure apps" \
-      io.k8s.display-name="Clojure s2i 1.1.0" \
-      io.openshift.expose-services="8080:http,8778:nrepl" \
+      io.k8s.display-name="Clojure s2i 1.2.0" \
+      io.openshift.expose-services="8080:http,8443:https,8778:jolokia" \
       io.openshift.tags="builder,clojure,lein,leiningen"
 
 
@@ -26,12 +27,6 @@ COPY ./s2i/bin/ /usr/local/s2i
 # RUN chown -R 1001:1001 /opt/app-root
 
 
-
-# This default user is created in the openshift/base-centos7 image
-#USER 1001
-
-
-
-EXPOSE 8080 8778
+USER 185
 
 CMD ["/usr/libexec/s2i/usage"]
